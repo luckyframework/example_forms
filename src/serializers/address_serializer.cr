@@ -9,11 +9,11 @@ class AddressSerializer < BaseSerializer
 
   def render
     {
-      street: street,
+      street:   street,
       street_2: street_2,
-      city: city,
-      state: state,
-      zip_code: zip_code
+      city:     city,
+      state:    state,
+      zip_code: zip_code,
     }
   end
 end

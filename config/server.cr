@@ -3,7 +3,7 @@
 # Look at config/route_helper.cr if you want to change the domain used when
 # generating links with `Action.url`.
 Lucky::Server.configure do |settings|
-  if Lucky::Env.production?
+  if LuckyEnv.production?
     settings.secret_key_base = secret_key_from_env
     settings.host = "0.0.0.0"
     settings.port = ENV["PORT"].to_i
@@ -26,7 +26,7 @@ Lucky::Server.configure do |settings|
   # However you could use a CDN when in production like this:
   #
   #   Lucky::Server.configure do |settings|
-  #     if Lucky::Env.production?
+  #     if LuckyEnv.production?
   #       settings.asset_host = "https://mycdnhost.com"
   #     else
   #       settings.asset_host = ""
@@ -44,6 +44,15 @@ Lucky::ForceSSLHandler.configure do |settings|
   #
   # Or, leave it disabled:
   settings.enabled = false
+end
+
+# Set a unique ID for each HTTP request.
+# To enable the request ID, uncomment the lines below.
+# You can set your own custom String, or use a random UUID.
+Lucky::RequestIdHandler.configure do |settings|
+  settings.set_request_id = ->(context : HTTP::Server::Context) {
+    UUID.random.to_s
+  }
 end
 
 private def secret_key_from_env

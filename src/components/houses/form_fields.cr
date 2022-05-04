@@ -30,19 +30,19 @@ class Houses::FormFields < BaseComponent
     end
 
     multi_select_input(operation.tags) do
-      options_for_multi_select(operation.tags, tag_options)
+      options_for_select(operation.tags, tag_options)
     end
   end
 
   private def house_property_types
-    House::AvramPropertyType.names.map do |e|
-      {e, House::PropertyType.new(e)}
+    House::PropertyType.names.map do |e|
+      {e, House::PropertyType.parse(e)}
     end
   end
 
   private def house_status_types
-    House::AvramStatus.names.map do |e|
-      {e, House::Status.new(e)}
+    House::Status.names.map do |e|
+      {e, House::Status.parse(e)}
     end
   end
 
@@ -51,7 +51,7 @@ class Houses::FormFields < BaseComponent
       {"New Construction", "New Construction"},
       {"VA Benefits", "VA Benefits"},
       {"Priced to Sell", "Priced to Sell"},
-      {"No HOA", "No HOA"}
+      {"No HOA", "No HOA"},
     ]
   end
 end

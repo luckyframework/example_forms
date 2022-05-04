@@ -1,16 +1,16 @@
 class House < BaseModel
-  avram_enum PropertyType do
-    Apartment = 2
-    Condo = 3
-    Farm = 6
-    LotLand = 8
-    Mobile = 7
-    MultiFamily = 5
+  enum PropertyType
+    Apartment    = 2
+    Condo        = 3
+    Farm         = 6
+    LotLand      = 8
+    Mobile       = 7
+    MultiFamily  = 5
     SingleFamily = 1
-    TownHome = 4
+    TownHome     = 4
   end
 
-  avram_enum Status do
+  enum Status
     ForSale
     Pending
     Forclosure
@@ -30,5 +30,4 @@ class House < BaseModel
     column price : Int64
     column tags : Array(String) = [] of String
   end
-
 end
