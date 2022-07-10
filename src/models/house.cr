@@ -29,5 +29,6 @@ class House < BaseModel
     column year_built : Int16
     column price : Int64
     column tags : Array(String) = [] of String
+    belongs_to neighborhood : Neighborhood
   end
 end

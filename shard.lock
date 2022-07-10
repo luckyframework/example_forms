@@ -1,12 +1,13 @@
+# NOTICE: This lockfile contains some overrides from shard.override.yml
 version: 2.0
 shards:
   authentic:
     git: https://github.com/luckyframework/authentic.git
     version: 0.8.2
 
-  avram:
+  avram: # Overridden
     git: https://github.com/luckyframework/avram.git
-    version: 0.23.0
+    version: 0.23.0+git.commit.ca991e0be8aab65a6e3ba03e47b5c5646a15c794
 
   backtracer:
     git: https://github.com/sija/backtracer.cr.git
@@ -56,9 +57,9 @@ shards:
     git: https://github.com/crystal-community/jwt.git
     version: 1.6.0
 
-  lucky:
+  lucky: # Overridden
     git: https://github.com/luckyframework/lucky.git
-    version: 0.30.1
+    version: 0.30.1+git.commit.88f9562a5d69dd9c90af03967757daeed376af17
 
   lucky_cache:
     git: https://github.com/luckyframework/lucky_cache.git
@@ -80,9 +81,9 @@ shards:
     git: https://github.com/luckyframework/lucky_task.git
     version: 0.1.1
 
-  openssl_ext:
-    git: https://github.com/spider-gazelle/openssl_ext.git
-    version: 2.1.5
+  openssl_ext: # Overridden
+    git: https://github.com/jwoertink/openssl_ext.git
+    version: 2.1.5+git.commit.0f382679b13f9e7e316db170effebe2c457d3076
 
   pg:
     git: https://github.com/will/crystal-pg.git

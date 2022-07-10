@@ -13,7 +13,10 @@ crystal: ">= 1.4.0"
 dependencies:
   lucky:
     github: luckyframework/lucky
-    version: ~> 0.30.1
+    branch: main
+  avram:
+    github: luckyframework/avram
+    branch: operation_array_attributes
   authentic:
     github: luckyframework/authentic
     version: ~> 0.8.2
