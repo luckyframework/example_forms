@@ -16,9 +16,19 @@ class House < BaseModel
     Forclosure
   end
 
+  struct Address
+    include JSON::Serializable
+
+    property street : String
+    property street_2 : String?
+    property city : String
+    property state : String
+    property zip_code : String
+  end
+
   table do
     column blurb : String
-    column address : JSON::Any = JSON::Any.new({} of String => JSON::Any)
+    column address : House::Address, serialize: true
     column bedrooms : Int32
     column bathrooms : Float64
     column living_sqft : Int32

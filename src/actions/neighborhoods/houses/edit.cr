@@ -1,4 +1,4 @@
-class Houses::Edit < BrowserAction
+class Neighborhoods::Houses::Edit < NeighborhoodAction
   get "/houses/:house_id/edit" do
     house = HouseQuery.find(house_id)
     html EditPage,

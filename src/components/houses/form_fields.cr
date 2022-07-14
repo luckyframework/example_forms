@@ -21,16 +21,22 @@ class Houses::FormFields < BaseComponent
       checkbox(operation.active_listing)
     end
 
-    select_input(operation.property_type) do
-      options_for_select(operation.property_type, house_property_types)
+    div do
+      select_input(operation.property_type) do
+        options_for_select(operation.property_type, house_property_types)
+      end
     end
 
-    select_input(operation.status) do
-      options_for_select(operation.status, house_status_types)
+    div do
+      select_input(operation.status) do
+        options_for_select(operation.status, house_status_types)
+      end
     end
 
-    multi_select_input(operation.tags) do
-      options_for_select(operation.tags, tag_options)
+    div do
+      multi_select_input(operation.tags) do
+        options_for_select(operation.tags, tag_options)
+      end
     end
   end
 

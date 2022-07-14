@@ -1,9 +1,10 @@
-class Houses::ShowPage < MainLayout
+class Neighborhoods::Houses::ShowPage < MainLayout
+  needs neighborhood : Neighborhood
   needs house : House
   quick_def page_title, "House with id: #{house.id}"
 
   def content
-    link "Back to all Houses", Houses::Index
+    link "Back to all Houses", Neighborhoods::Houses::Index.with(neighborhood)
     h1 "House with id: #{house.id}"
     render_actions
     render_house_fields
@@ -11,10 +12,10 @@ class Houses::ShowPage < MainLayout
 
   def render_actions
     section do
-      link "Edit", Houses::Edit.with(house.id)
+      link "Edit", Neighborhoods::Houses::Edit.with(neighborhood, house)
       text " | "
       link "Delete",
-        Houses::Delete.with(house.id),
+        Neighborhoods::Houses::Delete.with(neighborhood, house),
         data_confirm: "Are you sure?"
     end
   end

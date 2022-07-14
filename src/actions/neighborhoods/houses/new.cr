@@ -1,4 +1,4 @@
-class Houses::New < BrowserAction
+class Neighborhoods::Houses::New < NeighborhoodAction
   get "/houses/new" do
     html NewPage, operation: SaveHouse.new
   end
