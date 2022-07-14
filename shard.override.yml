@@ -5,6 +5,3 @@ dependencies:
   avram:
     github: luckyframework/avram
     branch: operation_array_attributes
-  openssl_ext:
-    github: jwoertink/openssl_ext
-    branch: issues/9

@@ -81,9 +81,9 @@ shards:
     git: https://github.com/luckyframework/lucky_task.git
     version: 0.1.1
 
-  openssl_ext: # Overridden
-    git: https://github.com/jwoertink/openssl_ext.git
-    version: 2.1.5+git.commit.0f382679b13f9e7e316db170effebe2c457d3076
+  openssl_ext:
+    git: https://github.com/spider-gazelle/openssl_ext.git
+    version: 2.2.0
 
   pg:
     git: https://github.com/will/crystal-pg.git
