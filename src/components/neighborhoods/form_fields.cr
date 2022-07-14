@@ -28,7 +28,7 @@ class Neighborhoods::FormFields < BaseComponent
       "Pool House",
       "Security Gate",
       "Golf Course",
-      "Park"
+      "Park",
     ]
   end
 end
